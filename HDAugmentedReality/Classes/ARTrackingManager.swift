@@ -235,7 +235,7 @@ open class ARTrackingManager: NSObject, CLLocationManagerDelegate
         }
     }
     
-    internal func reportLocationToDelegate()
+    @objc internal func reportLocationToDelegate()
     {
         self.reportLocationTimer?.invalidate()
         self.reportLocationTimer = nil
@@ -352,7 +352,7 @@ open class ARTrackingManager: NSObject, CLLocationManagerDelegate
         self.locationSearchTimer = nil
     }
     
-    func locationSearchTimerTick()
+    @objc func locationSearchTimerTick()
     {
         guard let locationSearchStartTime = self.locationSearchStartTime else { return }
         let elapsedSeconds = Date().timeIntervalSince1970 - locationSearchStartTime
